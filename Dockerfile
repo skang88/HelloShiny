@@ -16,7 +16,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 RUN R -e "install.packages(c('shiny', 'shinydashboard', 'shinydashboardPlus', 'plotly', 'DBI', 'RMariaDB', 'ggplot2', 'dplyr', 'tidyr', 'DT', 'dotenv'), dependencies=TRUE, repos='https://cloud.r-project.org/')"
 
 # Copy current directory to the image
-COPY . /srv/shiny-server/
+# Comment for development environment
+# COPY . /srv/shiny-server/
 
 # Set permissions for Shiny app
 RUN chown -R shiny:shiny /srv/shiny-server && chmod -R 755 /srv/shiny-server
