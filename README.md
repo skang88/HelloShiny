@@ -19,10 +19,10 @@ docker stop shiny-container
 docker rm shiny-container
 docker build -t shiny-app .
 
-# for production environment (without volume mount)
+# for production environment (without volume mount) - need to change dockerfile and decomment the COPY line
 docker run -d -p 3838:3838 --name shiny-container --restart always shiny-app
 
-# for development environment
+# for development environment (with volume mount) - need to change dockerfile and comment the COPY line
 docker run -d -p 3838:3838 --name shiny-container -v $(pwd):/srv/shiny-server --restart always shiny-app
 docker run -d -p 3838:3838 --name shiny-container -v C:/Users/admin/RProject/HelloShiny:/srv/shiny-server --restart always shiny-app
 
