@@ -343,8 +343,4 @@ server <- function(input, output, session) {
 
 
 # Shiny 앱 실행 시 외부 IP로 설정
-runApp(
-  appDir = list(ui = ui, server = server),  # appDir에는 ui와 server를 직접 지정
-  host = "0.0.0.0",  # 모든 네트워크 인터페이스에서 접근 가능
-  port = 4413        # 원하는 포트 번호 설정
-)
+shinyApp(ui = ui, server = server)
