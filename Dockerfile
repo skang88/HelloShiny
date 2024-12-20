@@ -17,7 +17,7 @@ RUN R -e "install.packages(c('shiny', 'shinydashboard', 'shinydashboardPlus', 'p
 
 # Copy current directory to the image
 # Comment for development environment
-# COPY . /srv/shiny-server/
+COPY . /srv/shiny-server/
 
 # Set permissions for Shiny app
 RUN chown -R shiny:shiny /srv/shiny-server && chmod -R 755 /srv/shiny-server
