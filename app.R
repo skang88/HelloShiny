@@ -6,7 +6,7 @@
 # install.packages("ggplot2")   # 그래프 시각화를 위해 추천
 # install.packages("shinydashboardPlus")
 # install.packages("DT")
-
+# install.packages("dotenv")
 library(shiny)
 library(shinydashboard)
 library(shinydashboardPlus)
@@ -14,14 +14,24 @@ library(plotly)
 library(DBI)
 library(RMariaDB)
 library(ggplot2)
+library(dotenv)
+
+# .env 파일 로드
+dotenv::load_dot_env()
+
+# 환경변수 읽기
+db_address <- Sys.getenv("DB_ADDRESS")
+db_name <- Sys.getenv("DB_NAME")
+db_user <- Sys.getenv("DB_USER")
+db_password <- Sys.getenv("DB_PASSWORD")
 
 # MySQL 데이터베이스 연결
 con <- dbConnect(
   RMariaDB::MariaDB(),
-  dbname = "SAG",
-  host = "172.16.220.32",
-  user = "seokgyun",
-  password = "1q2w3e4r"
+  dbname = db_name,
+  host = db_address,
+  user = db_user,
+  password = db_password
 )
 
 # 데이터 불러오기
