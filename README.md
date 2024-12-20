@@ -23,6 +23,7 @@ docker build -t shiny-app .
 docker run -d -p 3838:3838 --name shiny-container --restart always shiny-app
 
 # for development environment (with volume mount) - need to change dockerfile and comment the COPY line
+# 그냥 개발은 Rstudio IDE 에서 하고, 테스트 및 배포는 production environment라고 생각하고 하는게 나은것 같음.
 docker run -d -p 3838:3838 --name shiny-container -v $(pwd):/srv/shiny-server --restart always shiny-app
 docker run -d -p 3838:3838 --name shiny-container -v C:/Users/admin/RProject/HelloShiny:/srv/shiny-server --restart always shiny-app
 

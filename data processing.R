@@ -1,5 +1,8 @@
-# 0. Library Loading ---- 
+# 엑셀 파일로 부터 데이터를 수집하여, DB로 전송하는 코드.
+# 엑셀 파일이 업데이트 될때마다 실행하여야 하며, 엑셀 데이터의 셀 주소 기반으로 데이터 추출이 이루어지기 때문에, 
+# 셀 주소 등이 변경될 때마다 코드도 업데이트 되어야 합니다. 
 
+# 0. Library Loading ---- 
 library(readxl)
 library(dplyr)
 library(tidyr)

@@ -13,7 +13,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
  && rm -rf /var/lib/apt/lists/*
 
 # Install required R packages
-RUN R -e "install.packages(c('shiny', 'shinydashboard', 'shinydashboardPlus', 'plotly', 'DBI', 'RMariaDB', 'ggplot2', 'dplyr', 'tidyr', 'DT', 'dotenv'), dependencies=TRUE, repos='https://cloud.r-project.org/')"
+RUN R -e "install.packages(c('shiny', 'shinydashboard', 'shinydashboardPlus', 'plotly', 'DBI', 'RMariaDB', 'ggplot2', 'dplyr', 'tidyr', 'DT', 'dotenv', 'stringr'), dependencies=TRUE, repos='https://cloud.r-project.org/')"
 
 # Copy current directory to the image
 # Comment for development environment
