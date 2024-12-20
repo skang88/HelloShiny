@@ -14,10 +14,10 @@ Hi This is from Dell Latitude Laptop
 
 
 # Run Docker container
-
+docker build -t shiny-app .
 docker stop shiny-container
 docker rm shiny-container
-docker build -t shiny-app .
+
 
 # for production environment (without volume mount) - need to change dockerfile and decomment the COPY line
 docker run -d -p 3838:3838 --name shiny-container --restart always shiny-app
