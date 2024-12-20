@@ -163,7 +163,7 @@ ui <- dashboardPage(
       tabItem(tabName = "kpi_monthly",
               fluidRow(
                 box(title = "KPI Monthly Data", status = "primary", solidHeader = TRUE, 
-                    h4("월별 KPI 추이를 확인할 수 있습니다. - 업데이트 예정일까요?"))
+                    h4("월별 KPI 추이를 확인할 수 있습니다. - 업데이트 예정일수도 있을까요?"))
               )
       ),
       
